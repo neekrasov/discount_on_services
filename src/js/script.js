@@ -24,5 +24,3 @@ closeButton.addEventListener('click', ()=>{
     body.classList.remove('overflow-down');
     login.classList.remove('active');
 });
-
-new WOW().init();
