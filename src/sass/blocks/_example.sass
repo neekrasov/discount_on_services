@@ -1,0 +1,101 @@
+.example
+    width: 1200px
+    margin: 128px auto 0 auto
+        
+    .nav-menu
+        display: none
+    &-steps__wrapper
+        margin-top: 37px
+        display: grid
+        grid-template-columns: repeat(3, 388px)
+        grid-template-rows: 300px
+        gap: 16px
+    
+    &-step
+        position: relative
+        padding: 149px 0 40px 36px
+        background: #FFFFFF
+        box-shadow: 0px 12px 28px rgba(244, 245, 245, 0.2)
+        border-radius: 32px
+
+        &__title
+            font-weight: 700
+            font-size: 22px
+            line-height: 140%
+            color: #171717
+        
+        &__description
+            margin-top: 26px
+            font-style: normal
+            font-weight: 400
+            font-size: 18px
+            line-height: 150%
+            color: #333333
+
+        &__img
+            right: 0
+            top: 0
+            position: absolute
+
+    &-invite
+        padding: 44px 0 44px 80px
+        position: relative
+        height: 203px
+        margin-top: 20px
+        background: #1749B3
+        box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2)
+        border-radius: 32px
+
+        &__title
+            font-weight: 400
+            font-size: 26px
+            line-height: 140%
+            color: #FFFFFF
+        
+        &__description
+            margin-top: 24px
+            font-weight: 400
+            font-size: 16px
+            line-height: 150%
+            color: #FFFFFF
+            width: 480px
+            
+
+        &__link
+            &-block
+                padding: 28px 72px 27px 72px
+                position: absolute
+                right: 80px
+                top: 40px
+                background: #F1F4F8
+                border-radius: 16px
+                width: 445px
+                height: 123px
+            &-title
+                font-weight: 400
+                font-size: 20px
+                line-height: 140%
+                text-align: center
+                color: #171717
+            
+            &-url
+                cursor: pointer
+                margin-top: 10px
+                font-weight: 600
+                font-size: 20px
+                line-height: 150%
+                text-align: center
+                text-decoration-line: underline
+                text-transform: uppercase
+                color: #1749B3
+
+                &:after
+                    display: inline-block
+                    content: ''
+                    width: 18px
+                    height: 20px
+                    background: url(../icons/copy.svg)
+                    transform: translateX(11px) translateY(4px)
+                    
+
+                
