@@ -65,10 +65,10 @@
               <a class="nav-link" href="#">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Support</a>
+              <a class="nav-link support__link" href="#">Support</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#about">About</a>
             </li>
           </ul>
         </div>
@@ -126,20 +126,22 @@
       <div class="login">
         <div class="login__wrapper">
           <div class="login__title">Log In</div>
-          <div class="login__close"><img src="src/icons/close.svg" alt="close"></div>
+          <div class="login__close button__close"><img src="src/icons/close.svg" alt="close"></div>
           <div class="login__create">
             New user? <a href="">Create an account</a>
           </div>
-          <form action="#">
+          <form action="https://httpbin.org/post" method="post">
             <label for="email">Email Address</label>
             <input placeholder="Enter your email" id="email" type="text">
             
             <label for="password">Password</label>
             <input placeholder="********" id="password" type="password">
+
+            <div class="login__forgot">Forgot password?</div>
+            <button class=" button button__login">Log in</button>
           </form>
   
-          <div class="login__forgot">Forgot password?</div>
-          <button class=" button button__login">Log in</button>
+          
           <div class="login__social">
             <div class="login__social-title">Or sign in with</div>
             <div class="login__services">
@@ -152,6 +154,93 @@
           <div class="login__privacy-policy">Protected by reCAPTCHA and subject to the Google <a href="">Privacy Policy</a> and <span>Terms of Service</span>.</div>
         </div>
       </div>
+
+      <div class="sign-up">
+        <div class="sign-up__wrapper">
+          <div class="login__title">Create an account</div>
+          <div class="sign-up__close button__close"><img src="src/icons/close.svg" alt="close"></div>
+          <div class="login__create">
+            Already have an account? <a href="#">Sign In</a>
+          </div>
+          <form action="https://httpbin.org/post" method="post" >
+            <label class="name" for="sign-up__name">User name</label>
+            <input placeholder="Enter your name" id="sign-up__name" type="text">
+
+            <label class="email" for="sign-up__email">Email Address</label>
+            <input placeholder="Enter your email" id="sign-up__email" type="text">
+            
+            <label class="password" for="sign-up__password">Password</label>
+            <input placeholder="********" id="sign-up__password" type="password">
+            
+            <div class="sign-up__policy">
+              <input type="checkbox" id="policy" name="policy" class="checkbox_policy">
+              <label for="policy">By creating an account you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</label>
+            </div>
+
+            <button class="button button__sign-up">Sign Up</button>
+          </form>
+          
+          <div class="login__social">
+            <div class="login__social-title">Or sign in with</div>
+            <div class="login__services">
+              <div class="login__service"><img src="src/icons/social/google_26x26.svg" alt="google"></div>
+              <div class="login__service"><img src="src/icons/social/facebook_26x26.svg" alt="facebook"></div>
+              <div class="login__service"><img src="src/icons/social/apple_26_31.svg" alt="apple"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <section class="support">
+
+      <div class="support__wrapper">
+        <div class="support__close button__close"><img src="src/icons/close.svg" alt="close"></div>
+        <h2 class="support__title">Support</h2>
+        <form action="https://httpbin.org/post" method="post">
+          <label class="name" for="support_name">Name</label>
+          <input placeholder="Enter your name" id="support_name" type="text">
+  
+          <label class="email" for="support_email">Email Address</label>
+          <input placeholder="Enter your email" id="support_email" type="text">
+  
+          <label class="how_us">How did you hear about us</label>
+          <select>
+            <option>From friends</option>
+            <option>From the Internet</option>
+            <option>From employees</option>
+            <option>From advertising</option>
+          </select>
+  
+          <label class="support__appeal">Appeal type</label>
+          <input id="complaint" type="radio" name="support_appeal">
+          <label for="complaint">A complaint</label>
+      
+          <input id="appeal" type="radio" name="support_appeal">
+          <label for="appeal">Appeal</label>
+          
+          <label class = "support__message"> Message </label>
+          <textarea></textarea>
+          
+          <label class = "support__file-label" for="support__file">
+            <span>Attach a file if necessary</span>
+            <span class="support__file-img"><img class="input__file-icon" src="./src/img/add.png" alt="Выбрать файл" width="25"></span>
+          </label>
+          <input type="file" id="support__file", class = "support__input-file">
+
+          <div class="support__agreement">
+            <input type="checkbox" id="support_policy" name="policy" class="checkbox_policy">
+            <label for="support_policy">
+              You agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.
+            </label>
+          </div>
+          
+
+          <button class="button button__support">Submit</button>
+  
+        </form>
+      </div>
+      
+    </section>
 
     <section class="get-started">
         <div class="start-enjoing animate__animated animate__fadeInLeft wow">
@@ -249,171 +338,169 @@
         </div>
       </section>
 
-      <section id="faq" class="faq">
-        <div class="title faq__title">
-          FAQ
+    <section id="faq" class="faq">
+      <div class="title faq__title">
+        FAQ
+      </div>
+
+      <div class="accordion" id="faq_questions">
+
+        <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_1" aria-expanded="false" aria-controls="faq_1">
+                The set time has passed, but the invoice has not yet arrived, what should I do?
+              </button>
+            </h2>
+          </div>
+      
+          <div id="faq_1" class="collapse" aria-labelledby="headingOne" data-parent="#faq_questions">
+            <div class="card-body">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nostrum cumque ipsum dolores sequi quis, iure veniam numquam officia fugit id doloribus officiis animi mollitia. Fugit eos laboriosam nostrum.
+            </div>
+          </div>
         </div>
 
-        <div class="accordion" id="faq_questions">
-
-          <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_1" aria-expanded="false" aria-controls="faq_1">
-                  The set time has passed, but the invoice has not yet arrived, what should I do?
-                </button>
-              </h2>
-            </div>
-        
-            <div id="faq_1" class="collapse" aria-labelledby="headingOne" data-parent="#faq_questions">
-              <div class="card-body">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nostrum cumque ipsum dolores sequi quis, iure veniam numquam officia fugit id doloribus officiis animi mollitia. Fugit eos laboriosam nostrum.
-              </div>
+        <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_2" aria-expanded="false" aria-controls="faq_2">
+                Can I change my Netflix account email and password after purchase?
+              </button>
+            </h2>
+          </div>
+          <div id="faq_2" class="collapse" aria-labelledby="headingTwo" data-parent="#faq_questions">
+            <div class="card-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dignissimos corrupti harum cupiditate corporis necessitatibus consectetur delectus, vitae nesciunt commodi veritatis ad accusantium alias voluptatibus cumque repellat quam dolorem! Quasi?
             </div>
           </div>
+        </div>
 
-          <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_2" aria-expanded="false" aria-controls="faq_2">
-                  Can I change my Netflix account email and password after purchase?
-                </button>
-              </h2>
-            </div>
-            <div id="faq_2" class="collapse" aria-labelledby="headingTwo" data-parent="#faq_questions">
-              <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dignissimos corrupti harum cupiditate corporis necessitatibus consectetur delectus, vitae nesciunt commodi veritatis ad accusantium alias voluptatibus cumque repellat quam dolorem! Quasi?
-              </div>
+        <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_3" aria-expanded="false" aria-controls="faq_3">
+                Can I add a phone number for password recovery?
+              </button>
+            </h2>
+          </div>
+          <div id="faq_3" class="collapse" aria-labelledby="headingThree" data-parent="#faq_questions">
+            <div class="card-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quidem cumque, harum voluptate illum accusamus dignissimos ea distinctio. Sapiente quam sed fugit minus assumenda dolorum recusandae numquam dolor quaerat porro?
             </div>
           </div>
+        </div>  
 
           <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
-            <div class="card-header" id="headingThree">
+            <div class="card-header" id="headingFour">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_3" aria-expanded="false" aria-controls="faq_3">
-                  Can I add a phone number for password recovery?
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_4" aria-expanded="false" aria-controls="faq_4">
+                  How soon will I receive the account information I ordered?
                 </button>
               </h2>
             </div>
-            <div id="faq_3" class="collapse" aria-labelledby="headingThree" data-parent="#faq_questions">
+            <div id="faq_4" class="collapse" aria-labelledby="headingFour" data-parent="#faq_questions">
               <div class="card-body">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quidem cumque, harum voluptate illum accusamus dignissimos ea distinctio. Sapiente quam sed fugit minus assumenda dolorum recusandae numquam dolor quaerat porro?
               </div>
             </div>
-          </div>  
+          </div>
 
             <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
-              <div class="card-header" id="headingFour">
+              <div class="card-header" id="headingFive">
                 <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_4" aria-expanded="false" aria-controls="faq_4">
-                    How soon will I receive the account information I ordered?
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_5" aria-expanded="false" aria-controls="faq_5">
+                    How to pay?
                   </button>
                 </h2>
               </div>
-              <div id="faq_4" class="collapse" aria-labelledby="headingFour" data-parent="#faq_questions">
+              <div id="faq_5" class="collapse" aria-labelledby="headingFive" data-parent="#faq_questions">
                 <div class="card-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quidem cumque, harum voluptate illum accusamus dignissimos ea distinctio. Sapiente quam sed fugit minus assumenda dolorum recusandae numquam dolor quaerat porro?
+                  Payment options we currently have: PayPal, Bitcoin.
                 </div>
               </div>
             </div>
+      </div>
+      <button class="button button__support">Support</button>
 
-              <div class="card animate__animated animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                <div class="card-header" id="headingFive">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq_5" aria-expanded="false" aria-controls="faq_5">
-                      How to pay?
-                    </button>
-                  </h2>
-                </div>
-                <div id="faq_5" class="collapse" aria-labelledby="headingFive" data-parent="#faq_questions">
-                  <div class="card-body">
-                    Payment options we currently have: PayPal, Bitcoin.
-                  </div>
-                </div>
-              </div>
+    </section>
+
+    <div class="request animate__animated animate__fadeInLeft wow">
+      <div class="request__title">Request for an additional <br> subscription that was not found here</div>
+      <div class="request__description">Disney, Amazon Prime, Microsoft Office, Microsoft Windows</div>
+      <button class="button button__request">Request</button>
+    </div>
+
+    <footer>
+      <div class="footer__container">
+        <div id = "brand" class="footer__column">
+          <div class="footer__brand">
+            <img src="src/icons/logo/logo_60x60.svg" alt="">
+            <div class="footer__name">DiscountsOnServices</div>
+          </div>
+          <div class="footer__text">It's simple, fast and <br> economical</div>
+
+        </div>
+        <div id = "subscriptions" class="footer__column">
+          <div class="footer__title">Subscriptions</div>
+          <div class="footer__items">
+            <ul>
+              <li><a href="">Netflix</a></li>
+              <li><a href="">YouTube Premium</a></li>
+              <li><a href="">Spotify</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div id = "navigation" class="footer__column">
+          <div class="footer__title">Site navigation</div>
+          <div class="footer__items">
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#subscr">Subscriptions</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div id = "social" class="footer__column">
+          <div class="footer__social-link">
+            <img src="src/icons/social/white_whattsapp.svg" alt="whattsapp">
+          </div>
+          <div class="footer__social-link">
+            <img src="src/icons/social/white_telegram.svg" alt="telegram">
+          </div>
+
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              EN
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">Russian</a>
+              <a class="dropdown-item" href="#">Spanish</a>
+            </div>
         </div>
 
-        <div class="support">
-          <button class="button button__support">Support</button>
         </div>
-      </section>
 
-      <div class="request animate__animated animate__fadeInLeft wow">
-        <div class="request__title">Request for an additional <br> subscription that was not found here</div>
-        <div class="request__description">Disney, Amazon Prime, Microsoft Office, Microsoft Windows</div>
-        <button class="button button__request">Request</button>
       </div>
 
-      <footer>
-        <div class="footer__container">
-          <div id = "brand" class="footer__column">
-            <div class="footer__brand">
-              <img src="src/icons/logo/logo_60x60.svg" alt="">
-              <div class="footer__name">DiscountsOnServices</div>
-            </div>
-            <div class="footer__text">It's simple, fast and <br> economical</div>
-
-          </div>
-          <div id = "subscriptions" class="footer__column">
-            <div class="footer__title">Subscriptions</div>
-            <div class="footer__items">
-              <ul>
-                <li><a href="">Netflix</a></li>
-                <li><a href="">YouTube Premium</a></li>
-                <li><a href="">Spotify</a></li>
-              </ul>
-            </div>
-
-          </div>
-          <div id = "navigation" class="footer__column">
-            <div class="footer__title">Site navigation</div>
-            <div class="footer__items">
-              <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#subscr">Subscriptions</a></li>
-              </ul>
-            </div>
-
-          </div>
-          <div id = "social" class="footer__column">
-            <div class="footer__social-link">
-              <img src="src/icons/social/white_whattsapp.svg" alt="whattsapp">
-            </div>
-            <div class="footer__social-link">
-              <img src="src/icons/social/white_telegram.svg" alt="telegram">
-            </div>
-
-            <div class="dropdown">
-              <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                EN
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">English</a>
-                <a class="dropdown-item" href="#">Russian</a>
-                <a class="dropdown-item" href="#">Spanish</a>
-              </div>
-          </div>
-
-          </div>
-
-        </div>
-
-        <div class="footer__other">
-          <span>Privacy Policy</span>
-          <span>Copyright 2021 © All Rights Reserved</span>
-          <span>Developed by @neekrasov</span>
-        </div>
-        
-      </footer>
+      <div class="footer__other">
+        <span>Privacy Policy</span>
+        <span>Copyright 2021 © All Rights Reserved</span>
+        <span>Developed by @neekrasov</span>
+      </div>
+      
+    </footer>
 
 
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-      <script src="src/js/wow.min.js"></script>
-      <script src="src/js/script.js"></script>
-      <script>
-        new WOW().init();
-      </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="src/js/wow.min.js"></script>
+    <script src="src/js/script.js"></script>
+    <script>
+      new WOW().init();
+    </script>
 </body>
 </html>

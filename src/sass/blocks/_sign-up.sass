@@ -1,0 +1,56 @@
+.sign-up
+    display: none
+
+    &.active
+        display: block
+
+    position: fixed
+    top: 0px
+    width: 100%
+    height: 100%
+    background: rgba(23, 73, 179, 0.1)
+    backdrop-filter: blur(15px)
+    padding: 
+        top: 33px
+        bottom: 42px
+
+    z-index: 9999
+
+    &__wrapper
+        position: relative
+        padding: 40px
+        margin: 0 auto
+        width: 37.5%
+        max-height: 853px
+        background: #FFFFFF
+        box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2)
+        border-radius: 32px
+
+    form
+        margin-top: 40px
+
+        .email, .name, .password
+            display: block
+            margin-top: 32px
+
+        #sign-up__email, #sign-up__name, #sign-up__password
+            outline: none
+            border: none
+            font-size: 15px
+            padding: 16px 24px
+            width: 100%
+            background: #F1F4F8
+            border: none
+            border-radius: 12px
+    
+    &__policy
+        display: flex
+        gap: 8px
+        margin-top: 32px
+        font-size: 15px
+        input
+            width: 20px
+            height: 20px
+            background: #FFFFFF
+            border: 1px solid #CECBDF
+            border-radius: 4px
